@@ -1,0 +1,26 @@
+{
+  "manifest_version": 2,
+  "name": "Link Monitor",
+  "version": "1.0",
+  "description": "Monitors and appends all visited links to clipboard.",
+  "permissions": ["storage", "tabs", "activeTab", "clipboardWrite", "webNavigation"],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon.png",
+      "48": "icon.png",
+      "128": "icon.png"
+    }
+  }
+}
