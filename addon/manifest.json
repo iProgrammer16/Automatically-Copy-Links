@@ -1,12 +1,17 @@
 {
   "manifest_version": 2,
-  "name": "Link Monitor",
+  "name": "Automatically Copy Links",
   "version": "1.0",
-  "description": "Monitors and appends all visited links to clipboard.",
-  "permissions": ["storage", "tabs", "activeTab", "clipboardWrite", "webNavigation"],
+  "description": "Automatically monitors and copies all visited links to your clipboard.",
+  "permissions": [
+    "storage",
+    "tabs",
+    "activeTab",
+    "clipboardWrite",
+    "webNavigation"
+  ],
   "background": {
-    "scripts": ["background.js"],
-    "persistent": true
+    "scripts": ["background.js"]
   },
   "content_scripts": [
     {
@@ -18,9 +23,16 @@
   "browser_action": {
     "default_popup": "popup.html",
     "default_icon": {
-      "16": "icon.png",
-      "48": "icon.png",
-      "128": "icon.png"
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png",
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
     }
+  },
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
   }
 }
